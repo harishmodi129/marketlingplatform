@@ -1,0 +1,319 @@
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f7fafc;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Custom animations */
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+/* Gradient text */
+.bg-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom shadows */
+.shadow-soft {
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07),
+    0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Custom keyframes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Responsive typography */
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000 !important;
+}
+
+.bg-custom {
+  background-color: #005cab !important;
+}
+
+.purpose-text {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal; /* Bold is already controlled by weight */
+  font-size: 92px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.our-text,
+.purpose-text {
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 92px;
+  line-height: 1; /* ensures no extra spacing */
+  vertical-align: bottom; /* align both spans */
+}
+
+.our-text {
+  -webkit-text-stroke: 2px #4c4f54;
+  color: transparent;
+}
+
+.purpose-text {
+  color: #005cab;
+}
+
+.custom-btn {
+  background-color: #005cab;
+  border-radius: 25px;
+  border: none;
+  color: #fff; /* to ensure text is readable */
+}
+
+.no-padding-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Header background */
+header,
+.navbar {
+  background-color: #ffffff !important; /* Dark gray background */
+}
+
+/* Header text styles */
+header .nav-link,
+header .navbar-brand {
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-weight: 400;
+  font-style: normal; /* Regular */
+  font-size: 16px;
+  line-height: 100%; /* 16px line height */
+  letter-spacing: 0;
+  text-align: center;
+  color: #fff !important; /* White text for contrast */
+}
+
+/* globals.css */
+.contact-btn {
+  background-color: #005cab;
+  color: #fff; /* White text */
+  width: 122px;
+  height: 40px;
+  border-radius: 25px;
+  padding: 8px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none; /* Remove underline */
+  border: none;
+  display: inline-flex; /* Keeps text centered */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 1;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #004080;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+.footer {
+  background-color: #005cab;
+  color: white;
+  width: 100%;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .social-icons a {
+  font-size: 18px;
+  margin: 0 10px;
+  display: inline-block;
+  color: white;
+}
+
+.footer .social-icons a:hover {
+  color: #dcdcdc;
+}
+
+.black-text {
+  color: black !important;
+}
+
+.styled-purpose {
+  width: 543px;
+  height: 66px;
+  display: inline-block; /* so width and height take effect */
+  background-color: #005cab;
+  border: 2px solid #4c4f54;
+  line-height: 66px; /* vertically center the text */
+  text-align: center; /* horizontally center the text */
+  color: white; /* if text needs to contrast with background */
+  font-weight: bold;
+  font-size: 36px; /* adjust to fit 66px height */
+  letter-spacing: 0;
+  opacity: 1;
+  /* Optional for positioning */
+  position: relative; /* or absolute if you want exact Figma placement */
+  top: 0px; /* adjust if needed */
+  left: 0px; /* adjust if needed */
+}
+
+.custom-text {
+  font-family: "Helvetica", sans-serif; /* Helvetica font */
+  font-weight: 700; /* Bold weight */
+  font-style: normal; /* Bold already handled by weight */
+  font-size: 48px; /* 48px font size */
+  line-height: 1.2; /* 120% of font size */
+  letter-spacing: 0.5px; /* subtle spacing */
+  vertical-align: middle; /* aligns vertically if inline */
+  margin: 0; /* reset default margin */
+  color: #4c4f54;
+}
+
+.text-muted {
+  font-family: "Helvetica", sans-serif; /* Helvetica font */
+  font-weight: 400; /* Regular weight */
+  font-style: normal; /* Normal style */
+  font-size: 16px; /* font size */
+  line-height: 1.4; /* 140% of font size */
+  letter-spacing: 0.5px; /* subtle spacing */
+  margin: 0; /* reset default margin */
+  color: #4c4f54;
+  text-align: center; /* horizontal alignment */
+}
+
+/* Purpose Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .purpose-card {
+    margin-top: 60px !important; /* Reduce top margin */
+    padding-top: 120px !important; /* Adjust space for image */
+    max-width: 100% !important; /* Full width on mobile */
+  }
+
+  .purpose-card img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .purpose-text,
+  .our-text,
+  .custom-text {
+    font-size: 3rem !important;
+    text-align: start !important;
+  }
+
+  .purpose-section {
+    padding: 40px 10px !important;
+  }
+}
+
+/* Add this to your global CSS file */
+@media (max-width: 767px) {
+  .purpose-card {
+    margin-bottom: 20px; /* creates a gap between cards */
+  }
+}
