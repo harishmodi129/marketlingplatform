@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from '@/lib/store';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { checkAuthStatus } from '@/features/auth/authSlice';
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "@/lib/store";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { checkAuthStatus } from "@/features/auth/authSlice";
 
 // Loading component for PersistGate
 function Loading() {
@@ -35,10 +35,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <Provider store={store}>
       <PersistGate loading={<Loading />} persistor={persistor}>
-        <AuthChecker>
-          {children}
-        </AuthChecker>
+        <AuthChecker>{children}</AuthChecker>
       </PersistGate>
     </Provider>
   );
-} 
+}
