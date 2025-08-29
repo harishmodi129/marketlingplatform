@@ -8,28 +8,27 @@ interface HeaderProps {
 
 const Header = ({ className }: HeaderProps) => {
   return (
-    <div className={`header-wrapper ${className || ""}`}>
+    <div
+      className="position-relative header-wrapper"
+      style={{ height: "300px" }}
+    >
       {/* Background Image */}
-      <div className="relative" style={{ height: "300px" }}>
-        <Image
-          src="/image.png"
-          alt="background image"
-          fill
-          className="object-cover"
-        />
-      </div>
+      <Image
+        src="/image.png"
+        alt="background image"
+        fill
+        className="object-cover"
+      />
 
       {/* Navbar */}
       <nav
-        className="navbar navbar-expand-lg custom-navbar shadow"
+        className="navbar navbar-expand-lg custom-navbar"
         style={{
-          position: "fixed",
+          position: "fixed", // make header fixed on all pages
           top: "20px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "90%",
-          maxWidth: "1400px", // keeps nav centered on very wide screens
+          left: "100px",
           height: "66px",
+          width: "90%",
           borderRadius: "60px",
           backgroundColor: "#ffffff",
           zIndex: 9999,
@@ -103,6 +102,7 @@ const Header = ({ className }: HeaderProps) => {
       <style jsx>{`
         @media (max-width: 768px) {
           nav.custom-navbar {
+            left: 10px !important;
             width: calc(100% - 20px) !important;
             border-radius: 30px !important;
           }
