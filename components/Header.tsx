@@ -34,7 +34,7 @@ const Header = ({ className }: HeaderProps) => {
           zIndex: 9999,
         }}
       >
-        <div className="container p-0">
+        <div className="container-fluid px-4">
           {/* Brand Logo */}
           <a className="navbar-brand d-flex align-items-center" href="#">
             <Image src="/company.png" alt="logo" width={185} height={36} />
